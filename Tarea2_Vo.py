@@ -91,3 +91,18 @@ plt.xlabel("Voltaje en Vin [V]")
 plt.ylabel("Voltaje en Vo [V]")
 plt.savefig("Vo_vs_Vin.png")
 plt.clf()
+
+Vv1 = np.ones(100)*V1
+Vv2 = np.ones(100)*V2
+
+Vd1 = -Vv1  - VVin
+Vd2 = VVin + Vv2
+
+plt.plot(VVin,Vd2, label = "Vd2")
+plt.plot(VVin,Vd1, c = "y", label = "Vd1")
+plt.plot(VVin, zero, c = "k")
+plt.legend(loc = 2)
+plt.title("Voltaje diodos vs Vin")
+plt.xlabel("Voltaje en Vin [V]")
+plt.ylabel("Voltaje en diodos [V]")
+plt.savefig("VD_vs_Vin.png")
