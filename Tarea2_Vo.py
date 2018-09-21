@@ -25,41 +25,20 @@ IIm2 = Im2(VVin)
 #Linea de I = 0
 zero = np.zeros(100)
 
+#Corrientes de Diodos
 Id1 = IIm2 - IIm1
 Id2 = IIm2
 
-"""
-A=0
-for i in IIm1:
-    if i<0.01 and i>-0.01:
-        print "Vm1 = " + str(VVin[A])
-    A+=1
-
-B=0
-for i in IIm2:
-    if i<0.01 and i>-0.01:
-        print "Vm2 = " + str(VVin[B])
-    B+=1
-
-Id1 = IIm2 - IIm1
-
-C=0
-for i in Id1:
-    if i<0.01 and i>-0.01:
-        print "Vd1 = " + str(VVin[B])
-    C+=1
-"""
-
 #Graficas
 #plt.plot(VVin,IIm1, label = "Im1")
-plt.plot(VVin,IIm2, c = "r", label = "Id2")
 plt.plot(VVin,Id1, c = "g", label = "Id1")
+plt.plot(VVin,IIm2, c = "r", label = "Id2")
 plt.plot(VVin, zero, c = "k")
 plt.legend(loc = 2)
-plt.title("Im1 y Im2 vs Vin")
+plt.title("Id1 y Id2 vs Vin")
 plt.xlabel("Voltaje en (Vin) [V]")
 plt.ylabel("Corriente [mA]")
-plt.savefig("Im1_Im2__Vin.png")
+plt.savefig("Id1_Id2__Vin.png")
 plt.clf()
 
 #Constantes
